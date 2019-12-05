@@ -1,0 +1,134 @@
+:root {
+  /* Wonderful feature of css3 ---> width: calc(100vw - 140px); */
+  /*   --secondary-color: rgb(94, 88, 89); 
+      --secondary-color: rgb(43, 52, 65);
+   */
+
+  --primary-color: rgba(167, 11, 89, 0.829);
+  --secondary-color: rgb(51, 51, 58);
+  --third-color: teal;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: var(--primary-color); */
+  background: var(--secondary-color);
+  color: #fff;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+#main-header {
+  background: var(--primary-color);
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.43rem;
+}
+
+#timeline ul {
+  background: var(--secondary-color);
+  padding: 50px 0;
+}
+
+/* Creating a line */
+#timeline ul li {
+  list-style: none;
+  position: relative;
+  margin: 0 auto;
+  width: 6px;
+  background: #fff;
+  padding-top: 55px;
+}
+
+/* Boxes */
+#timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 1rem;
+  background: var(--third-color);
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Rigt-Side */
+#timeline ul li:nth-child(odd) div {
+  left: 40px;
+  transform: translateX(200px);
+}
+
+
+/* Left-Side */
+#timeline ul li:nth-child(even) div {
+  left: -464px;
+  transform: translateX(-200px);
+}
+
+/* Dots */
+#timeline ul li::after {
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: inherit;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Arrow - Base */
+#timeline div::before {
+  content: ' ';
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  background: var(--secondary-color);
+  border-style: solid;
+}
+
+/* Right-Side Arrows */
+#timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent var(--third-color) transparent transparent;
+}
+
+/* Right-Side Arrows */
+#timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent var(--third-color);
+}
+
+
+/* Show-Box */
+#timeline ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+#timeline ul li.show:after {
+  background: var(--primary-color);
+}
