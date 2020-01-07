@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*
+nice colors  
+  background: #042331;
+  background: #063146;
+  color: #0a5275;
+ background: #11d66a;
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #08c0b7;
+  transition: all 0.5s ease;
+}
+
+.sidebar header {
+  color: #fff;
+  background: #a8147c;
+  font-size: 1.5rem;
+  line-height: 3.5;
+  text-align: center;
+  user-select: none;
+}
+
+.sidebar ul a {
+  display: block;
+  color: #fff;
+  height: 11%;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  padding-left: 2.3rem;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #000;
+  text-align: left;
+  padding-top: 1rem;
+  transition: 0.45s;
+}
+
+.sidebar ul li:hover a {
+  padding-left: 3.3rem;
+  color: #eeff00;
+}
+
+.sidebar ul li a i {
+  margin-right: 0.9rem;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  background: #03ccbb;
+  /* background: crimson; */
+  border-radius: 3px;
+}
+
+
+label #btn {
+  font-size: 35px;
+  top: 25px;
+  left: 40px;
+  color: #fff;
+  /* color: red; */
+  padding: 6px 12px;
+  transition: all 0.5s;
+}
+
+label #cancel {
+  z-index: 1;
+  color: #e4ebee;
+  /* color: white; */
+  top: 18px;
+  left: -195px;
+  font-size: 30px;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+
+#check:checked~.sidebar {
+  left: 0;
+}
+
+#check:checked~label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked~label #cancel {
+  left: 195px;
+}
+
+#check:checked~section {
+  margin-left: 250px;
+}
+
+section {
+  background: url('./pc.jpg') no-repeat center center/cover;
+  /* background-position: center; */
+  /* background-size: cover; */
+  height: 100vh;
+  transition: all 0.5s ease;
+}
