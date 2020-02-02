@@ -10,7 +10,7 @@
   ----------------------------------------------------------------------------------
   3----knowledge_resume
   
-  website-----> https://nag-knowledge-resume.netlify.com
+  website-----> https://nag-knowledge-resume.netlify.com/
   ----------------------------------------------------------------------------------
   4----dropdown-menu-Project    
   
